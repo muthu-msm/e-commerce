@@ -1,4 +1,4 @@
-package org.mkt.product.dto;
+package org.mkt.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
