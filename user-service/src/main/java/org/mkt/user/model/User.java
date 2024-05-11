@@ -6,7 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,22 +14,26 @@ import java.math.BigDecimal;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(schema = "orders")
+@Table(schema = "user_management")
 @Data
-public class OrderDetails extends BaseModel {
+public class User extends BaseModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private Order order;
+    @Column(unique = true)
+    private String firstName;
 
-    private Long productID;
+    private Long username;
 
-    private Long subProductID;
+    private String mobileNumber;
 
-    private BigDecimal price;
+    private String password;
 
-    @Column(columnDefinition = "jsonb")
-    private String productDetails;
+    private String email;
+
+    private String isVerified;
+
+    private String verification_code;
+
 }

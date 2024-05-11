@@ -21,9 +21,10 @@
             </activation>
 
             <modules>
+                <module>common-lib</module>
                 <module>service-manager</module>
-                <module>order-service</module>
                 <module>user-service</module>
+                <module>order-service</module>
                 <module>product-service</module>
             </modules>
         </profile>

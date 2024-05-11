@@ -2,9 +2,9 @@ package org.mkt.order.controller;
 
 
 import lombok.RequiredArgsConstructor;
-import org.mkt.order.dto.OrderRequest;
-import org.mkt.order.dto.OrderResponse;
-import org.mkt.order.dto.Response;
+import org.mkt.common.dto.OrderRequest;
+import org.mkt.common.dto.OrderResponse;
+import org.mkt.common.dto.Response;
 import org.mkt.order.service.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,37 +1,40 @@
 package org.mkt.user.model;
 
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.math.BigDecimal;
-
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(schema = "orders")
+@Table(schema = "user_management")
 @Data
-public class Order extends BaseModel{
+public class Address extends BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
-    private String number;
+    @ManyToOne
+    private User user;
 
-    private Long userId;
+    private String mobileNumber;
 
-    private BigDecimal netAmount;
+    private String addressLine1;
 
-    private BigDecimal grossAmount;
+    private String addressLine2;
 
-    private BigDecimal deliveryCharge;
+    private String landMark;
 
+    private String district;
 
+    private String state;
 
+    private String country;
+
+    private String zipCode;
 }

@@ -2,9 +2,9 @@ package org.mkt.product.controller;
 
 
 import lombok.RequiredArgsConstructor;
-import org.mkt.product.dto.ProductRequest;
-import org.mkt.product.dto.ProductResponse;
-import org.mkt.product.dto.Response;
+import org.mkt.common.dto.ProductRequest;
+import org.mkt.common.dto.ProductResponse;
+import org.mkt.common.dto.Response;
 import org.mkt.product.service.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

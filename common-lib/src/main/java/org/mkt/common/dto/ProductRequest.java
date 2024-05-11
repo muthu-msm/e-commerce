@@ -1,6 +1,5 @@
-package org.mkt.product.dto;
+package org.mkt.common.dto;
 
-import jakarta.persistence.Column;
 import lombok.Data;
 
 import java.math.BigDecimal;

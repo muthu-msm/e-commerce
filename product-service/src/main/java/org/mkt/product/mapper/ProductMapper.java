@@ -2,8 +2,8 @@ package org.mkt.product.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
-import org.mkt.product.dto.ProductRequest;
-import org.mkt.product.dto.ProductResponse;
+import org.mkt.common.dto.ProductRequest;
+import org.mkt.common.dto.ProductResponse;
 import org.mkt.product.model.Product;
 
 @Mapper

@@ -1,9 +1,9 @@
 package org.mkt.product.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import org.mkt.product.dto.ProductRequest;
-import org.mkt.product.dto.ProductResponse;
-import org.mkt.product.dto.Response;
+import org.mkt.common.dto.ProductRequest;
+import org.mkt.common.dto.ProductResponse;
+import org.mkt.common.dto.Response;
 import org.mkt.product.mapper.ProductMapper;
 import org.mkt.product.model.Product;
 import org.mkt.product.repository.ProductRepository;

@@ -1,8 +1,8 @@
 package org.mkt.product.service;
 
-import org.mkt.product.dto.ProductRequest;
-import org.mkt.product.dto.ProductResponse;
-import org.mkt.product.dto.Response;
+import org.mkt.common.dto.ProductRequest;
+import org.mkt.common.dto.ProductResponse;
+import org.mkt.common.dto.Response;
 
 public interface ProductService extends IBaseService<ProductRequest, Response<ProductResponse>>{
 }

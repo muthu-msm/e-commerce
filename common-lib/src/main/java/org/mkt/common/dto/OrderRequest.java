@@ -1,4 +1,4 @@
-package org.mkt.order.dto;
+package org.mkt.common.dto;
 
 import lombok.Data;
 

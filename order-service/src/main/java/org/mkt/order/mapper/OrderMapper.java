@@ -3,8 +3,8 @@ package org.mkt.order.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
-import org.mkt.order.dto.OrderRequest;
-import org.mkt.order.dto.OrderResponse;
+import org.mkt.common.dto.OrderRequest;
+import org.mkt.common.dto.OrderResponse;
 import org.mkt.order.model.Order;
 
 @Mapper

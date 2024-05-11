@@ -1,6 +1,6 @@
 package org.mkt.product.service;
 
-import org.mkt.product.dto.Response;
+import org.mkt.common.dto.Response;
 
 public interface IBaseService<T, L> {
 
