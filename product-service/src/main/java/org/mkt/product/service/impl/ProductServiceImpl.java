@@ -18,6 +18,10 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
 
+    @Override
+    public void justdet(){
+
+    }
 
     @Override
     public Response<ProductResponse> create(ProductRequest request) {

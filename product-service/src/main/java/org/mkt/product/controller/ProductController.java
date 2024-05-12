@@ -33,7 +33,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Response<ProductResponse>> create(@PathVariable Long id) {
+    public ResponseEntity<Response<ProductResponse>> get(@PathVariable Long id) {
         return ResponseEntity.ok(productService.get(id));
     }
 

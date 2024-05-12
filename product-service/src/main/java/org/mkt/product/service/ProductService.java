@@ -5,4 +5,8 @@ import org.mkt.common.dto.ProductResponse;
 import org.mkt.common.dto.Response;
 
 public interface ProductService extends IBaseService<ProductRequest, Response<ProductResponse>>{
+
+    default void  justdet(){
+
+    }
 }

@@ -23,6 +23,7 @@
             <modules>
                 <module>common-lib</module>
                 <module>service-manager</module>
+                <module>api-gateway</module>
                 <module>user-service</module>
                 <module>order-service</module>
                 <module>product-service</module>
