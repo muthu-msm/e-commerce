@@ -2,6 +2,7 @@ package org.mkt.product.model;
 
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,6 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.hibernate.annotations.ColumnTransformer;
+import org.hibernate.annotations.Type;
 
 import java.math.BigDecimal;
 
@@ -25,6 +28,7 @@ public class Product extends BaseModel {
 
     private String description;
 
+    @ColumnTransformer(write = "?::jsonb")
     @Column(columnDefinition = "jsonb")
     private String imageUrls;
 
@@ -40,6 +44,7 @@ public class Product extends BaseModel {
 
     private String brand;
 
+    @ColumnTransformer(write = "?::jsonb")
     @Column(columnDefinition = "jsonb")
     private String additionalDetails;
 }

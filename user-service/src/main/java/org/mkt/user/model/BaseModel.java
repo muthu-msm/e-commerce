@@ -15,6 +15,8 @@ public class BaseModel {
     // Last updated timestamp
     private LocalDateTime updatedAt;
 
+    private String status;
+
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();

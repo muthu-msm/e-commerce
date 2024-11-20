@@ -1,20 +1,24 @@
 package org.mkt.common.dto;
 
+import jakarta.persistence.Column;
 import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Data
 public class UserRequest {
-    private Long orderID;
 
-    private String orderNumber;
+    private Long id;
 
-    private Long userId;
+    private String username;
 
-    private BigDecimal netAmount;
+    private String role;
 
-    private BigDecimal grossAmount;
+    private String mobileNumber;
 
-    private BigDecimal deliveryCharge;
+    private String password;
+
+    private String email;
+
+    private String firstName;
 }

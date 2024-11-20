@@ -8,6 +8,7 @@ import org.mkt.user.mapper.UserMapper;
 import org.mkt.user.model.User;
 import org.mkt.user.repository.UserRepository;
 import org.mkt.user.service.UserService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -17,11 +18,11 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-
+    public final PasswordEncoder passwordEncoder;
 
     @Override
     public Response<UserResponse> create(UserRequest request) {
-        request.setOrderID(null);
+        request.setPassword(passwordEncoder.encode(request.getPassword()));
         User user = userRepository.save(UserMapper.INSTANCE.requestToEntity(request));
 
         return new Response<>(1, UserMapper.INSTANCE.entityToRequest(user));
@@ -29,13 +30,25 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Response<UserResponse> update(UserRequest request) {
-        User user = userRepository.save(UserMapper.INSTANCE.requestToEntity(request));
-        return new Response<>(1, UserMapper.INSTANCE.entityToRequest(user));
+        Optional<User> optionalUser = userRepository.findById(request.getId());
+
+        return optionalUser.map(value -> {
+                    request.setPassword(optionalUser.get().getPassword());
+                    return new Response<>(1, UserMapper.INSTANCE.entityToRequest(userRepository.save(UserMapper.INSTANCE.requestToEntity(request))));
+                })
+                .orElseGet(() -> new Response<>(404, "Not found"));
     }
 
     @Override
-    public Long delete(Long id) {
-        return 0L;
+    public Response<Long> delete(Long id) {
+        Optional<User> optionalUser = userRepository.findById(id);
+
+        return optionalUser.map(value -> {
+                    optionalUser.get().setStatus("D");
+                    userRepository.save(optionalUser.get());
+                    return new Response<>(1, id);
+                })
+                .orElseGet(() -> new Response<>(404, "Not found"));
     }
 
     @Override
@@ -43,7 +56,7 @@ public class UserServiceImpl implements UserService {
         Optional<User> order = userRepository.findById(id);
 
         return order.map(value -> new Response<>(1, UserMapper.INSTANCE.entityToRequest(value)))
-                .orElseGet(() -> new Response<>(404, "Not found", null));
+                .orElseThrow(() -> new Response<>(404, "Not found", null));
 
     }
 }

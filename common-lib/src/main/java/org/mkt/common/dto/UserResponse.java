@@ -6,16 +6,16 @@ import java.math.BigDecimal;
 
 @Data
 public class UserResponse {
+    private Long id;
 
-    private Long orderID;
+    private String username;
+    private String role;
 
-    private String orderNumber;
+    private String mobileNumber;
 
-    private Long userId;
+    private String password;
 
-    private BigDecimal netAmount;
+    private String email;
 
-    private BigDecimal grossAmount;
-
-    private BigDecimal deliveryCharge;
+    private String firstName;
 }
